@@ -1,0 +1,10 @@
+services:
+  simple_server:
+    container_name: simple_server
+    image: ghcr.io/leonegron24/simple_server:latest
+    ports:
+      - "7045:8080"
+    env_file:
+      - .env.simple_server # Load environment variables from .env.app_name file
+    labels:
+      caddy.domain: learn.leosdns.com # Caddy label for domain routing <app_name.gregslist.dev>
